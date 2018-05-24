@@ -1,0 +1,48 @@
+{{set . "title" "Hello page"}}
+{{template "header.html" .}}
+
+<h1>タイトル検索結果</h1>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: solid 1px;
+            padding: 0.5em;
+        }
+    </style>
+    <!-- <h1>{{ .books }}</h1> -->
+    <table>
+    <tr>
+        <td>Title</td>
+        <td>Image</td>
+        <td>InfoLink</td>
+    </tr>
+    {{range .m}}
+    <tr>
+        <td>{{.Title}}</td>
+        <td><image src="{{.Image}}"/></td>
+        <td><a href="{{.Info}}" target="_blank">参考ページ</a><br />
+    </tr>
+    {{end}}
+    </table>
+
+    <a href="/">HOME</a><br />
+    <a href="/ISBNRegister">ISBN登録画面へ</a><br />
+    <a href="/TitleRegister">タイトル登録画面へ</a><br />
+    <a href="/Display">全表示画面へ</a><br />
+
+<form action="/IsbnRegister" method="GET">
+    <input type="text" name="isbn" /><br/>
+    <input type="submit" value="ISBN Search" />
+</form>
+<br />
+
+<form action="/TitleRegister" method="GET">
+    <input type="text" name="title" /><br/>
+    <input type="submit" value="タイトル Search" />
+</form>
+<br />
+{{template "footer.html" .}}
+

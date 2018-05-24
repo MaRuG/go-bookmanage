@@ -1,0 +1,24 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+以下の書籍が削除されました！
+<div>
+    title:<span>{{ .m.title }}</span><br />
+</div>
+<div>
+    author:<span>{{ .m.author }}</span><br />
+</div>
+<div>
+    date:<span>{{ .m.date }}</span><br />
+</div>
+<div>
+    isbn:<span>{{ .m.isbn13 }}</span><br />
+</div>
+<div>
+    <img src="{{ .m.image}}" /><br />
+</div>
+
+<a href="/IsbnRegister">ISBN登録画面へ</a><br />
+<a href="/TitleRegister">タイトル登録画面へ</a><br />
+
+{{template "footer.html" .}}

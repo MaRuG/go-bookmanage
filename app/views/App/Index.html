@@ -1,0 +1,24 @@
+{{template "header.html" .}}
+
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+        <h1>{{ .m }}</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+
+<a href="/IsbnRegister">ISBN登録画面へ</a><br />
+<a href="/TitleRegister">タイトル登録画面へ</a><br />
+<a href="/Display">表示画面へ</a>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}

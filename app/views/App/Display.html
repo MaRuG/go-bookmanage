@@ -1,0 +1,47 @@
+{{set . "title" "Hello page"}}
+{{template "header.html" .}}
+
+<h1>DB表示</h1>
+
+<form action="/DbSearch" method="GET">
+    DB内検索<input type="text" name="word" /><br />
+    <input type="submit" value="検索" />
+</form>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: solid 1px;
+            padding: 0.5em;
+        }
+    </style>
+    <!-- <h1>{{ .books }}</h1> -->
+    <table>
+    <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td>Date</td>
+        <td>ISBN13</td>
+        <td>Image</td>
+        <td>Delete</td>
+    </tr>
+    {{range .books}}
+    <tr>
+        <td>{{.Title}}</td>
+        <td>{{.Author}}</td>
+        <td>{{.Date}}</td>
+        <td>{{.Isbn}}</td>
+        <td><image src="{{.Image}}"/></td><br />
+        <td><a href="/DeletePost?isbn={{.Isbn}}">削除</a></td>
+    </tr>
+    {{end}}
+    </table>
+
+    <a href="/">HOME</a>
+    <a href="/IsbnRegister">ISBN登録画面へ</a>
+    <a href="/TitleRegister">タイトル登録画面へ</a>
+
+{{template "footer.html" .}}
+

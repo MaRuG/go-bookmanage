@@ -1,0 +1,41 @@
+{{set . "title" "Hello page"}}
+{{template "header.html" .}}
+
+<h1>DB検索結果</h1>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: solid 1px;
+            padding: 0.5em;
+        }
+    </style>
+    <!-- <h1>{{ .books }}</h1> -->
+    <table>
+    <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td>Date</td>
+        <td>ISBN13</td>
+        <td>Image</td>
+    </tr>
+    {{range .books}}
+    <tr>
+        <td>{{.Title}}</td>
+        <td>{{.Author}}</td>
+        <td>{{.Date}}</td>
+        <td>{{.Isbn}}</td>
+        <td><image src="{{.Image}}"/></td><br />
+    </tr>
+    {{end}}
+    </table>
+
+    <a href="/">HOME</a><br />
+    <a href="/IsbnRegister">ISBN登録画面へ</a><br />
+    <a href="/TitleRegister">タイトル登録画面へ</a><br />
+    <a href="/Display">全表示画面へ</a><br />
+
+{{template "footer.html" .}}
+

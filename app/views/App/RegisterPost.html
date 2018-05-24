@@ -1,0 +1,25 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+以下の書籍が登録されました！
+<div>
+    title:<span>{{ .title }}</span><br />
+</div>
+<div>
+    author:<span>{{ .author }}</span><br />
+</div>
+<div>
+    date:<span>{{ .date }}</span><br />
+</div>
+<div>
+    isbn:<span>{{ .isbn }}</span><br />
+</div>
+<div>
+    <img src="{{ .image}}" /><br />
+</div>
+
+<a href="/IsbnRegister">ISBN登録画面へ</a><br />
+<a href="/TitleRegister">タイトル登録画面へ</a><br />
+<a href="/Display">表示画面へ</a>
+
+{{template "footer.html" .}}

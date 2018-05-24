@@ -1,0 +1,29 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+Welcome to Register Screen <br />
+
+<form action="/RegisterPost" method="post">
+    タイトル：<input type="text" name="title" value="{{.m.title}}" /><br />
+    著者：<input type="text" name="author" value="{{.m.author}}"/><br />
+    出版日：<input type="text" name="date" value="{{.m.date}}"/><br />
+    isbn13：<input type="text" name="isbn" value="{{.m.isbn13}}"/><br />
+    image_url：<input type="text" name="image" value="{{.m.image}}"/><br />
+    <input type="submit" value="登録" />
+</form>
+<br />
+<form action="/IsbnRegister" method="GET">
+    <input type="text" name="isbn" /><br/>
+    <input type="submit" value="ISBN Search" />
+</form>
+<br />
+
+<form action="/TitleRegister" method="GET">
+    <input type="text" name="title" /><br/>
+    <input type="submit" value="タイトル Search" />
+</form>
+<br />
+<a href="/">HOME</a><br />
+
+
+{{template "footer.html" .}}

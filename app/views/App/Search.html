@@ -1,0 +1,17 @@
+{{set . "title" "Search page"}}
+{{template "header.html" .}}
+
+<h1>Search Screen</h1>
+
+<form action="/RegisterPost" method="post">
+    タイトル：<input type="text" name="title" value="{{.m.title}}" /><br />
+    著者：<input type="text" name="author" value="{{.m.author}}"/><br />
+    出版日：<input type="text" name="date" value="{{.m.date}}"/><br />
+    isbn13：<input type="text" name="isbn" value="{{.m.isbn13}}"/><br />
+    image_url：<input type="text" name="image" value="{{.m.image}}"/><br />
+    <input type="submit" value="押す" />
+</form>
+<br />
+<a href="/">HOME</a>
+
+{{template "footer.html" .}}
