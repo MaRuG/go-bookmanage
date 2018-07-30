@@ -5,15 +5,24 @@
     <title>{{.title}}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap-3.3.6.min.css">
-    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
-    <script src="/public/js/jquery-2.2.4.min.js"></script>
-    <script src="/public/js/bootstrap-3.3.6.min.js"></script>
-    {{range .moreStyles}}
-      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
-    {{end}}
-    {{range .moreScripts}}
-      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
-    {{end}}
+    <!-- <link rel="stylesheet" type="text/css" href="/public/css/bootstrap&#45;3.3.6.min.css"> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png"> -->
+    <!-- <script src="/public/js/jquery&#45;2.2.4.min.js"></script> -->
+    <!-- <script src="/public/js/bootstrap&#45;3.3.6.min.js"></script> -->
+    <!-- {{range .moreStyles}} -->
+    <!--   <link rel="stylesheet" type="text/css" href="/public/{{.}}"> -->
+    <!-- {{end}} -->
+    <!-- {{range .moreScripts}} -->
+    <!--   <script src="/public/{{.}}" type="text/javascript" charset="utf&#45;8"></script> -->
+    <!-- {{end}} -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   </head>
   <body>

@@ -1,29 +1,89 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
 
-Welcome to Register Screen <br />
+<header>
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12 hide-on-med-and-down">
+            <a href="/" class="breadcrumb ">HOME</a>
+            <a href="/TitleRegister" class="breadcrumb">Title</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/IsbnRegister">ISBN</a></li>
+                <li><a href="/TitleRegister">Title</a></li>
+                <li><a href="/Display">Display</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+<div class="card-panel teal lighten-2 center"><h1>Welcome to Register Screen</h1></div>
 
 <form action="/RegisterPost" method="post">
-    タイトル：<input type="text" name="title" value="{{.m.title}}" /><br />
-    著者：<input type="text" name="author" value="{{.m.author}}"/><br />
-    出版日：<input type="text" name="date" value="{{.m.date}}"/><br />
-    isbn13：<input type="text" name="isbn" value="{{.m.isbn13}}"/><br />
-    image_url：<input type="text" name="image" value="{{.m.image}}"/><br />
-    <input type="submit" value="登録" />
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="title" value="{{.m.title}}" id="autocomplete-input" class="autocomplete">
+                    <!-- <label for="autocomplete&#45;input">実践パケット解析</label> -->
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="author" value="{{.m.author}}" id="autocomplete-input" class="autocomplete">
+                    <!-- <label for="autocomplete&#45;input">Chris Sanders</label> -->
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="date" value="{{.m.date}}" id="autocomplete-input" class="autocomplete">
+                    <!-- <label for="autocomplete&#45;input">2018/6/16</label> -->
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="isbn" value="{{.m.isbn10}}" id="autocomplete-input" class="autocomplete">
+                    <!-- <label for="autocomplete&#45;input">978&#45;4873118444</label> -->
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="image" value="{{.m.image}}" id="autocomplete-input" class="autocomplete">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <a class="waves-effect waves-light btn center"><i class="material-icons left">cloud</i><input type="submit" value="登録" /></a>
+        <!-- <input type="submit" value="登録" /> -->
+    </div>
 </form>
 <br />
 <form action="/IsbnRegister" method="GET">
-    <input type="text" name="isbn" /><br/>
-    <input type="submit" value="ISBN Search" />
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="isbn" /><br/>
+                    <label for="autocomplete-input">978-4873118444</label>
+                    <i class="material-icons prefix">textsms</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a class="waves-effect waves-light btn center"><i class="material-icons left">cloud</i><input type="submit" value="ISBN Search"></a>
+    </div>
 </form>
 <br />
 
 <form action="/TitleRegister" method="GET">
-    <input type="text" name="title" /><br/>
-    <input type="submit" value="タイトル Search" />
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="title" /><br/>
+                    <label for="autocomplete-input">実践パケット解析</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a class="waves-effect waves-light btn center"><i class="material-icons left">cloud</i><input type="submit" value="タイトル Search"></a>
+    </div>
 </form>
-<br />
-<a href="/">HOME</a><br />
 
 
 {{template "footer.html" .}}

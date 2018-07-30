@@ -1,47 +1,64 @@
 {{set . "title" "Hello page"}}
 {{template "header.html" .}}
 
-<h1>DB表示</h1>
+<header>
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12 hide-on-med-and-down">
+            <a href="/" class="breadcrumb ">HOME</a>
+            <a href="/TitleRegister" class="breadcrumb">Display</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/IsbnRegister">ISBN</a></li>
+                <li><a href="/TitleRegister">Title</a></li>
+                <li><a href="/Display">Display</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Dropdown Trigger -->
+</nav>
+</header>
+<div class="card-panel teal lighten-2 center"><h1>DB表示</h1></div>
 
 <form action="/DbSearch" method="GET">
-    DB内検索<input type="text" name="word" /><br />
-    <input type="submit" value="検索" />
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="word" /><br/>
+                    <label for="autocomplete-input">実践パケット解析</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a class="waves-effect waves-light btn center"><i class="material-icons left">cloud</i><input type="submit" value="検索"></a>
+    </div>
 </form>
 
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        td {
-            border: solid 1px;
-            padding: 0.5em;
-        }
-    </style>
-    <!-- <h1>{{ .books }}</h1> -->
     <table>
-    <tr>
-        <td>Title</td>
-        <td>Author</td>
-        <td>Date</td>
-        <td>ISBN13</td>
-        <td>Image</td>
-        <td>Delete</td>
-    </tr>
-    {{range .books}}
-    <tr>
-        <td>{{.Title}}</td>
-        <td>{{.Author}}</td>
-        <td>{{.Date}}</td>
-        <td>{{.Isbn}}</td>
-        <td><image src="{{.Image}}"/></td><br />
-        <td><a href="/DeletePost?isbn={{.Isbn}}">削除</a></td>
-    </tr>
-    {{end}}
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Author</td>
+                <td>Date</td>
+                <td>ISBN13</td>
+                <td>Image</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .books}}
+            <tr>
+                <td>{{.Title}}</td>
+                <td>{{.Author}}</td>
+                <td>{{.Date}}</td>
+                <td>{{.Isbn}}</td>
+                <td><image src="{{.Image}}"/></td>
+                <td><a href="/DeletePost?isbn={{.Isbn}}">削除</a></td>
+            </tr>
+            {{end}}
+        </tbody>
     </table>
 
-    <a href="/">HOME</a>
-    <a href="/IsbnRegister">ISBN登録画面へ</a>
-    <a href="/TitleRegister">タイトル登録画面へ</a>
-
 {{template "footer.html" .}}
-

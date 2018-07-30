@@ -1,24 +1,30 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
+<header>
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12 hide-on-med-and-down">
+            <a href="/" class="breadcrumb ">HOME</a>
+            <a href="/Display" class="breadcrumb">Display</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/IsbnRegister">ISBN</a></li>
+                <li><a href="/TitleRegister">Title</a></li>
+                <li><a href="/Display">Display</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Dropdown Trigger -->
+</nav>
+</header>
 
-以下の書籍が削除されました！
-<div>
-    title:<span>{{ .m.title }}</span><br />
-</div>
-<div>
-    author:<span>{{ .m.author }}</span><br />
-</div>
-<div>
-    date:<span>{{ .m.date }}</span><br />
-</div>
-<div>
-    isbn:<span>{{ .m.isbn13 }}</span><br />
-</div>
-<div>
-    <img src="{{ .m.image}}" /><br />
-</div>
+<div class="card-panel teal lighten-2 center"><h1>以下の書籍が削除されました!</h1></div>
 
-<a href="/IsbnRegister">ISBN登録画面へ</a><br />
-<a href="/TitleRegister">タイトル登録画面へ</a><br />
+<ul class="collection">
+    <li class="collection-item">{{ .m.title }}</li>
+    <li class="collection-item">{{ .m.author }}</li>
+    <li class="collection-item">{{ .m.date }}</li>
+    <li class="collection-item">{{ .m.isbn13 }}</li>
+    <li class="collection-item"><img src="{{ .m.image }}"></li>
+</ul>
 
 {{template "footer.html" .}}

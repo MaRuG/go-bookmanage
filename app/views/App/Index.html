@@ -1,17 +1,21 @@
 {{template "header.html" .}}
 
-<header class="jumbotron" style="background-color:#A9F16C">
-  <div class="container">
-    <div class="row">
-        <h1>{{ .m }}</h1>
-      <p></p>
-    </div>
-  </div>
+<!-- <header class="jumbotron" style="background&#45;color:#A9F16C"> -->
+<header>
+<div class="card-panel teal lighten-2 center"><h1>{{ .m }}</h1></div>
+  <!-- <div class="container"> -->
+    <!-- <div class="row"> -->
+      <!-- <p></p> -->
+    <!-- </div> -->
+  <!-- </div> -->
 </header>
 
-<a href="/IsbnRegister">ISBN登録画面へ</a><br />
-<a href="/TitleRegister">タイトル登録画面へ</a><br />
-<a href="/Display">表示画面へ</a>
+<!-- <a class="waves&#45;effect waves&#45;light btn" href="/IsbnRegister"><i class="material&#45;icons left">cloud</i>ISBN登録画面</a> -->
+<div class="center-align">
+    <a class="waves-effect waves-light btn-large z-depth-4 blue darken-4 col s8" href="/IsbnRegister"　target="_blank"><i class="fas fa-book left"></i>ISBN登録画面</a>
+    <a class="waves-effect waves-light btn-large z-depth-4 green lighten-2 darken-4 col s8" href="/TitleRegister"　target="_blank"><i class="fas fa-book left"></i>タイトル登録画面</a>
+    <a class="waves-effect waves-light btn-large z-depth-4 orange darken-4 darken-4 col s8" href="/Display"　target="_blank"><i class="fas fa-book left"></i>表示画面</a>
+</div>
 
 <div class="container">
   <div class="row">

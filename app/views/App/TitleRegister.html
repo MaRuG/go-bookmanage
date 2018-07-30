@@ -1,47 +1,78 @@
 {{set . "title" "Hello page"}}
 {{template "header.html" .}}
 
-<h1>タイトル検索結果</h1>
+<header>
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12 hide-on-med-and-down">
+            <a href="/" class="breadcrumb ">HOME</a>
+            <a href="/TitleRegister" class="breadcrumb">Title</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/IsbnRegister">ISBN</a></li>
+                <li><a href="/TitleRegister">Title</a></li>
+                <li><a href="/Display">Display</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Dropdown Trigger -->
+</nav>
+</header>
 
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        td {
-            border: solid 1px;
-            padding: 0.5em;
-        }
-    </style>
-    <!-- <h1>{{ .books }}</h1> -->
-    <table>
-    <tr>
-        <td>Title</td>
-        <td>Image</td>
-        <td>InfoLink</td>
-    </tr>
-    {{range .m}}
-    <tr>
-        <td>{{.Title}}</td>
-        <td><image src="{{.Image}}"/></td>
-        <td><a href="{{.Info}}" target="_blank">参考ページ</a><br />
-    </tr>
-    {{end}}
-    </table>
+<div class="card-panel teal lighten-2 center"><h1>Result of Title Search</h1></div>
 
-    <a href="/">HOME</a><br />
-    <a href="/ISBNRegister">ISBN登録画面へ</a><br />
-    <a href="/TitleRegister">タイトル登録画面へ</a><br />
-    <a href="/Display">全表示画面へ</a><br />
+<table>
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Image</td>
+            <td>InfoLink</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{range .m}}
+        <tr>
+            <td>{{.Title}}</td>
+            <td><image src="{{.Image}}"/></td>
+            <td><a href="{{.Info}}" target="_blank">参考ページ</a><br />
+        </tr>
+        {{end}}
+    </tbody>
+</table>
 
 <form action="/IsbnRegister" method="GET">
-    <input type="text" name="isbn" /><br/>
-    <input type="submit" value="ISBN Search" />
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="isbn" /><br/>
+                    <label for="autocomplete-input">978-4873118444</label>
+                    <i class="material-icons prefix">textsms</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a class="waves-effect waves-light btn center"><i class="material-icons left">cloud</i><input type="submit" value="ISBN Search"></a>
+    </div>
 </form>
 <br />
 
 <form action="/TitleRegister" method="GET">
-    <input type="text" name="title" /><br/>
-    <input type="submit" value="タイトル Search" />
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" name="title" /><br/>
+                    <label for="autocomplete-input">実践パケット解析</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a class="waves-effect waves-light btn center"><i class="material-icons left">cloud</i><input type="submit" value="タイトル Search"></a>
+    </div>
 </form>
 <br />
 {{template "footer.html" .}}

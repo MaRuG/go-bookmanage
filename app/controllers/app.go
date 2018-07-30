@@ -238,10 +238,11 @@ func Getisbn(isbn string) (map[string]string){
     // isbn10_type := bi.Items[0].VolumeInfo.IndustryIdentifiers[0].Type
     isbn10 := bi.Items[0].VolumeInfo.IndustryIdentifiers[0].Identifier
     // isbn13_type := bi.Items[0].VolumeInfo.IndustryIdentifiers[1].Type
-    isbn13 := bi.Items[0].VolumeInfo.IndustryIdentifiers[1].Identifier
+    // isbn13 := bi.Items[0].VolumeInfo.IndustryIdentifiers[1].Identifier
     image := bi.Items[0].VolumeInfo.ImageLinks.SmallThumbnail
 
-    m := map[string]string{"title": title, "author": author[0], "date": date, "isbn10": isbn10, "isbn13": isbn13, "image": image}
+    // m := map[string]string{"title": title, "author": author[0], "date": date, "isbn10": isbn10, "isbn13": isbn13, "image": image}
+    m := map[string]string{"title": title, "author": author[0], "date": date, "isbn10": isbn10, "image": image}
     // fmt.Println(m["isbn13"])
     // fmt.Println(m)
     return m

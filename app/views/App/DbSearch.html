@@ -1,41 +1,46 @@
 {{set . "title" "Hello page"}}
 {{template "header.html" .}}
+<header>
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12 hide-on-med-and-down">
+            <a href="/" class="breadcrumb ">HOME</a>
+            <a href="/Display" class="breadcrumb">Display</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/IsbnRegister">ISBN</a></li>
+                <li><a href="/TitleRegister">Title</a></li>
+                <li><a href="/Display">Display</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Dropdown Trigger -->
+</nav>
+</header>
 
-<h1>DB検索結果</h1>
+<div class="card-panel teal lighten-2 center"><h1>検索結果</h1></div>
 
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        td {
-            border: solid 1px;
-            padding: 0.5em;
-        }
-    </style>
-    <!-- <h1>{{ .books }}</h1> -->
-    <table>
-    <tr>
-        <td>Title</td>
-        <td>Author</td>
-        <td>Date</td>
-        <td>ISBN13</td>
-        <td>Image</td>
-    </tr>
-    {{range .books}}
-    <tr>
-        <td>{{.Title}}</td>
-        <td>{{.Author}}</td>
-        <td>{{.Date}}</td>
-        <td>{{.Isbn}}</td>
-        <td><image src="{{.Image}}"/></td><br />
-    </tr>
-    {{end}}
-    </table>
-
-    <a href="/">HOME</a><br />
-    <a href="/IsbnRegister">ISBN登録画面へ</a><br />
-    <a href="/TitleRegister">タイトル登録画面へ</a><br />
-    <a href="/Display">全表示画面へ</a><br />
+<table>
+<thead>
+<tr>
+    <td>Title</td>
+    <td>Author</td>
+    <td>Date</td>
+    <td>ISBN13</td>
+    <td>Image</td>
+</tr>
+</thead>
+<tbody>
+{{range .books}}
+<tr>
+    <td>{{.Title}}</td>
+    <td>{{.Author}}</td>
+    <td>{{.Date}}</td>
+    <td>{{.Isbn}}</td>
+    <td><image src="{{.Image}}"/></td><br />
+</tr>
+{{end}}
+</tbody>
+</table>
 
 {{template "footer.html" .}}
 
